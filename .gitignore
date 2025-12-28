@@ -1,0 +1,45 @@
+# CMake-generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+*.dir/
+*.cmake
+
+# Build directories
+build/
+*/build/
+
+# Visual Studio / IDE files
+*.sln
+*.vcxproj*
+*.user
+*.opensdf
+*.sdf
+*.ipch
+*.ncb
+*.clang-format
+*launch.json
+*settings.json
+
+# Mac / Linux system files
+.DS_Store
+*.swp
+*~
+
+# Compiled binaries and libraries
+*.exe
+*.out
+*.dll
+*.so
+*.a
+*.obj
+*.o
+
+# Precompiled headers
+*.pch
+*.gch
+
+# Logs
+*.log
