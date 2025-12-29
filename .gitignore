@@ -22,6 +22,7 @@ build/
 *.clang-format
 *launch.json
 *settings.json
+*.cache
 
 # Mac / Linux system files
 .DS_Store

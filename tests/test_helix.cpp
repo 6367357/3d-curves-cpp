@@ -28,31 +28,31 @@ TEST_F(Helix_test, get_point) {
     { // 0.0 degrees
         const Point3d calibration_point{5.0, 15.0, 5.0};
         const auto& point{helix->get_point(0.0)};
-        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_tolerance));
+        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_precision));
     }
 
     { // 90.0 degrees
         const Point3d calibration_point{5.5, 5.0, 15.0};
         const auto& point{helix->get_point(math::half_pi)};
-        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_tolerance));
+        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_precision));
     }
 
     { // 180.0 degrees
         const Point3d calibration_point{6.0, -5.0, 5.0};
         const auto& point{helix->get_point(math::pi)};
-        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_tolerance));
+        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_precision));
     }
 
     { // 270.0 degrees
         const Point3d calibration_point{6.5, 5.0, -5.0};
         const auto& point{helix->get_point(math::three_pi_over_two)};
-        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_tolerance));
+        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_precision));
     }
 
     { // 360.0 degrees
         const Point3d calibration_point{7.0, 15.0, 5.0};
         const auto& point{helix->get_point(math::two_pi)};
-        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_tolerance));
+        EXPECT_TRUE(math::equal(point, calibration_point, math::sqr_precision));
     }
 }
 
@@ -62,25 +62,25 @@ TEST_F(Helix_test, get_first_derivative) {
     { // 0.0 degrees
         const Vector3d calibration_vector{rise_along_x, 0.0, 10.0};
         const auto& vector{helix->get_first_derivative(0.0)};
-        EXPECT_TRUE(math::equal(vector, calibration_vector, math::sqr_tolerance));
+        EXPECT_TRUE(math::equal(vector, calibration_vector, math::sqr_precision));
     }
 
     { // 90.0 degrees
         const Vector3d calibration_vector{rise_along_x, -10.0, 0.0};
         const auto& vector{helix->get_first_derivative(math::half_pi)};
-        EXPECT_TRUE(math::equal(vector, calibration_vector, math::sqr_tolerance));
+        EXPECT_TRUE(math::equal(vector, calibration_vector, math::sqr_precision));
     }
 
     { // 180.0 degrees
         const Vector3d calibration_vector{rise_along_x, 0.0, -10.0};
         const auto& vector{helix->get_first_derivative(math::pi)};
-        EXPECT_TRUE(math::equal(vector, calibration_vector, math::sqr_tolerance));
+        EXPECT_TRUE(math::equal(vector, calibration_vector, math::sqr_precision));
     }
 
     { // 270.0 degrees
         const Vector3d calibration_vector{rise_along_x, 10.0, 0.0};
         const auto& vector{helix->get_first_derivative(math::three_pi_over_two)};
-        EXPECT_TRUE(math::equal(vector, calibration_vector, math::sqr_tolerance));
+        EXPECT_TRUE(math::equal(vector, calibration_vector, math::sqr_precision));
     }
 }
 

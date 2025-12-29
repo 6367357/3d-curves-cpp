@@ -27,11 +27,12 @@ private:
         const Vector3d& plane_normal,
         const Vector3d& major_direction);
 
-    Point3d _center; // Center of the ellipse
+    Point3d _center;
     double _radius_major; // Semi-major axis (largest radius)
     double _radius_minor; // Semi-minor axis (smallest radius)
-    Vector3d _axis_x; // Direction vector of the semi-major axis in the plane
-    Vector3d _axis_y; // Direction vector of the semi-minor axis in the plane
+    Vector3d _axis; // Ellipse axis direction (normalized). Redundant, stored only to speed up computations
+    Vector3d _axis_x; // Direction vector of the semi-major axis in the plane (normalized)
+    Vector3d _axis_y; // Direction vector of the semi-minor axis in the plane (normalized)
 
     friend class CurveFactory;
 };

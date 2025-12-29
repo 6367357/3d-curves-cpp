@@ -26,7 +26,7 @@ double Vector<T, Dim>::get_magnitude() const {
 template <typename T, std::size_t Dim>
     requires std::is_arithmetic_v<T>
 std::optional<Vector<T, Dim>> Vector<T, Dim>::get_any_perpendicular() const {
-    if (get_sqr_magnitude() <= sqr_tolerance) {
+    if (get_sqr_magnitude() <= sqr_precision) {
         return std::nullopt;
     }
 
@@ -51,7 +51,7 @@ template <typename T, std::size_t Dim>
     requires std::is_arithmetic_v<T>
 bool Vector<T, Dim>::normalize() {
     const auto sqr_magnitude{get_sqr_magnitude()};
-    if (sqr_magnitude <= sqr_tolerance) {
+    if (sqr_magnitude <= sqr_precision) {
         return false;
     }
     const auto magnitude{std::sqrt(sqr_magnitude)};

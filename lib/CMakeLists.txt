@@ -2,10 +2,11 @@ cmake_minimum_required(VERSION 3.16)
 project(curves LANGUAGES CXX)
 
 add_library(curves SHARED
-    src/curves/model/Circle.cpp
-    src/curves/model/CurveFactory.cpp
-    src/curves/model/Ellipse.cpp
-    src/curves/model/Helix.cpp
+    src/curves/intersection3d/ModelIntersection.cpp
+    src/curves/model3d/Circle.cpp
+    src/curves/model3d/CurveFactory.cpp
+    src/curves/model3d/Ellipse.cpp
+    src/curves/model3d/Helix.cpp
 )
 
 target_include_directories(curves

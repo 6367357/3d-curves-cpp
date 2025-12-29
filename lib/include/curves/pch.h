@@ -8,5 +8,6 @@
 #include <memory>
 #include <optional>
 #include <random>
+#include <vector>
 
 #endif // __pch_h_

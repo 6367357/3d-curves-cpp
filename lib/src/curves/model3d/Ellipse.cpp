@@ -11,8 +11,8 @@ Ellipse::Ellipse(const Point3d& center,
     double radius_minor,
     const Vector3d& plane_normal,
     const Vector3d& major_direction)
-    : _center{center}, _radius_major{radius_major}, _radius_minor{radius_minor}, _axis_x{major_direction},
-      _axis_y{math::cross_product(plane_normal, major_direction)} {};
+    : _center{center}, _radius_major{radius_major}, _radius_minor{radius_minor}, _axis{plane_normal},
+      _axis_x{major_direction}, _axis_y{math::cross_product(plane_normal, major_direction)} {};
 
 Ellipse::~Ellipse() = default;
 

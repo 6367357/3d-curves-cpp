@@ -53,7 +53,7 @@ std::shared_ptr<Circle> CurveFactory::create_circle(const Point3d& center,
 
     // From a mathematical point of view, the radius can be zero (degenerate case: the circle collapses to a point),
     // but in this context a zero or negative radius is considered invalid.
-    if (radius <= math::tolerance) {
+    if (radius <= math::precision) {
         if (log_error) {
             std::cout << "Error: Invalid radius: " << radius << '\n';
         }
@@ -87,7 +87,7 @@ std::shared_ptr<Circle> CurveFactory::create_circle(const Point3d& center,
 }
 
 std::shared_ptr<Circle> CurveFactory::create_random_circle(bool log_error) {
-    constexpr auto min_radius{math::tolerance};
+    constexpr auto min_radius{math::precision};
     constexpr auto max_radius{999999.9};
 
     const auto center{random_point()};
@@ -119,7 +119,7 @@ std::shared_ptr<Ellipse> CurveFactory::create_ellipse(const Point3d& center,
     // From a mathematical point of view, one or both semi-axes may be zero
     // (degenerate cases: the ellipse collapses to a line segment or a point).
     // However, in this context zero or negative semi-axis values are considered invalid.
-    if (radius_major <= math::tolerance || radius_minor <= math::tolerance) {
+    if (radius_major <= math::precision || radius_minor <= math::precision) {
         if (log_error) {
             std::cout << "Error: Invalid semi-axis lengths: " << radius_major << " : " << radius_minor << '\n';
         }
@@ -154,7 +154,7 @@ std::shared_ptr<Ellipse> CurveFactory::create_ellipse(const Point3d& center,
 }
 
 std::shared_ptr<Ellipse> CurveFactory::create_random_ellipse(bool log_error) {
-    constexpr auto min_radius{math::tolerance};
+    constexpr auto min_radius{math::precision};
     constexpr auto max_radius{999999.9};
 
     const auto center{random_point()};
@@ -192,7 +192,7 @@ std::shared_ptr<Helix> CurveFactory::create_helix(const Point3d& center,
     // From a mathematical point of view, the radius or step could be zero
     // (degenerate case: the helix collapses to a straight line along the axis or a single point).
     // However, in this context zero or negative values are considered invalid.
-    if (radius <= math::tolerance || step <= math::tolerance) {
+    if (radius <= math::precision || step <= math::precision) {
         if (log_error) {
             std::cout << "Error: Invalid helix parameters: radius = " << radius << ", step = " << step << '\n';
         }
@@ -219,9 +219,9 @@ std::shared_ptr<Helix> CurveFactory::create_helix(const Point3d& center,
 }
 
 std::shared_ptr<Helix> CurveFactory::create_random_helix(bool log_error) {
-    constexpr auto min_radius{math::tolerance};
+    constexpr auto min_radius{math::precision};
     constexpr auto max_radius{999999.9};
-    constexpr auto min_step{math::tolerance};
+    constexpr auto min_step{math::precision};
     constexpr auto max_step{4999.9};
 
     const auto center{random_point()};
